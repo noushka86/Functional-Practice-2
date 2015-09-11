@@ -146,19 +146,16 @@ console.assert(JS.name === "Justin")
 // in the properties object.
 // -----------
 function where(list, properties) {
-           var n=0;
-            var counter=0; 
+           
         return filter(list, function(obj){
-          n=0;
-          counter=0;
+       
                 for(var p in properties){
-                    n++;
-                  if(obj[p]===properties[p]) {
-                    counter++;
-                  }
+                   
+                  if(obj[p]!==properties[p]) return false;
                   
-              }
-              if (counter===n) {return obj};
+              else continue;
+            }
+            return obj;
 
             })
 }
